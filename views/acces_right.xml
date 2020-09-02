@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    <record id="view_magasin_inherit" model="ir.ui.view">
+                <field name="name">magasin.form.inherit</field>
+                <field name="model">crm.magasin</field>
+                <field name="inherit_id" ref="bi_crm_claim.crm_claim_magasin_form"/>
+                <field name="arch" type="xml">
+                    
+                <xpath expr="//div[@class='oe_title']" position="replace">
+                        
+                        <group col="3">
+                                <group>
+                                    <h1>
+                                        <field name="name"/>
+                                    </h1>
+                                </group>
+                                <group>
+                                    <h2>
+                                        <field name="id_magasin" placeholder="ID Magasin"/>
+                                    </h2>
+                                </group>
+                        </group>        
+                </xpath>
+
+    
+                </field>
+    </record>
+
+    <record id="view_users_inherit" model="ir.ui.view">
+                <field name="name">user.form.inherit</field>
+                <field name="model">res.users</field>
+                <field name="inherit_id" ref="base.view_users_form"/>
+                <field name="arch" type="xml">                 
+                <xpath expr="//page[@name='access_rights']/group/field[@name='companies_count']" position="before">
+        
+                         <field name="all_stores" string="Tous les magasins" />
+                         <field name="magasin_ids" string="Magasins associés" widget="many2many_tags" attrs="{'invisible': [('all_stores','!=', False)]}"/>
+                            
+                </xpath>
+                </field>
+    </record>
+    </data>
+    </odoo>

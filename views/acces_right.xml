@@ -41,5 +41,10 @@
                 </xpath>
                 </field>
     </record>
+
+    <record id="bi_crm_claim.menu_config_claim" model="ir.ui.menu">
+                    <field name="groups_id" eval="[(4,ref('group_reclamation_admin'))]"/>
+    </record>
+
     </data>
     </odoo>

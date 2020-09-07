@@ -26,5 +26,7 @@ mass_mailing.access_mailling_trace_report_mm_user,access.mailing.trace.report.mm
 mass_mailing.access_mailling_trace_report_mm_user,access.mailing.trace.report.mm.user,mass_mailing.model_mailing_trace_report,group_mass_mailing_managers,1,1,1,1
 mass_mailing.access_mailling_contact_mm_user,access.mailing.contact.mm.user,mass_mailing.model_mailing_contact,group_mass_mailing_managers,1,1,1,1
 "access_res_partner_group_user","res_partner group_user","base.model_res_partner","base.group_user",0,0,0,0
-bi_crm_claim.access_crm_claim,crm_claim_name,bi_crm_claim.model_crm_claim,group_reclamation_manager,1,1,1,1
+bi_crm_claim.access_cm_claim,crm_claim_name,bi_crm_claim.model_crm_claim,group_reclamation_manager,1,1,1,1
 bi_crm_claim.access_crm_claim,crm_claim_name,bi_crm_claim.model_crm_claim,group_reclamation_user,1,1,0,0
+wt_helpdesk.access_tcket_ticket,access_ticket_ticket,wt_helpdesk.model_ticket_ticket,group_sav_user,1,1,0,0
+wt_helpdesk.access_ticket_ticket,access_ticket_ticket,wt_helpdesk.model_ticket_ticket,group_sav_manager,1,1,1,1

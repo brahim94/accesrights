@@ -15,4 +15,16 @@ class ResUsers(models.Model):
 
     all_stores = fields.Boolean(string="Tous les magasins")
     magasin_ids = fields.Many2many('crm.magasin', 'magasins_user_rel', 'user_id', 'magasin_id', string='Magasins associés')
+
+
+class aftersales(models.Model):
+    _inherit = "ticket.ticket"
+
+    business_unit = fields.Many2one('crm.team', string='BU')
+    magasin = fields.Many2one('crm.magasin', string='Magasin')
+
+    @api.onchange('client_id')
+    def onchange_client_id(self):
+        self.business_unit = self.client_id.business_unit_id
+        self.magasin = self.client_id.magasin_id
  

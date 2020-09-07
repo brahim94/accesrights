@@ -20,11 +20,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'bi_crm_claim', 'mass_mailing'],
+    'depends': ['base', 'bi_crm_claim', 'mass_mailing', 'wt_helpdesk'],
 
     # always loaded
     'data': [
-        'security/security.xml',
+        'security/security_sav.xml',
+        'security/security_reclamation.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',

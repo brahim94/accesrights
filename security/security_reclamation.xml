@@ -3,7 +3,7 @@
 
     
     <data noupdate="0">
-        <!-- <record model="ir.module.category" id="bi_crm_claim.module_category_reclmation">
+        <!-- <record model="ir.module.category" id="module_category_reclmation">
             <field name="name">Reclamation</field>
             <field name="description">Helps you manage your reclamations.</field>
             <field name="sequence">43</field>        
@@ -57,7 +57,7 @@
     <record id="user_see_own_contact" model="ir.rule">
         <field name="name">access_right_contact_own_magasin</field>
         <field name="model_id" ref="base.model_res_partner"/>
-        <field name="domain_force">[]</field>
+        <!-- <field name="domain_force">[('magasin_id', 'in', user.magasin_ids)]]</field> -->
         <field name="groups" eval="[(4, ref('group_reclamation_user'))]"/>
         <field name="perm_unlink" eval="0"/>
         <field name="perm_write" eval="0"/>
@@ -68,8 +68,8 @@
     <record id="reclamation_all_magasin" model="ir.rule">
         <field name="name">access_right_reclamation_all_magasin</field>
         <field name="model_id" ref="bi_crm_claim.model_crm_claim"/>
-        <field name="domain_force">[(1,'=',1)]</field>
-        <field name="groups" eval="[(4, ref('group_reclamation_user'))]"/>
+        <field name="domain_force">[('user_id.all_stores','=',True)]</field>
+        <field name="groups" eval="[(4, ref('group_reclamation_manager'))]"/>
     </record>
 
 </data>

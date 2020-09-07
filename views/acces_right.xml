@@ -28,6 +28,25 @@
                 </field>
     </record>
 
+    <record id="view_sav_inherit" model="ir.ui.view">
+                <field name="name">sav.form.inherit</field>
+                <field name="model">ticket.ticket</field>
+                <field name="inherit_id" ref="wt_helpdesk.view_ticket_form"/>
+                <field name="arch" type="xml">
+                    
+                    <xpath expr="/form/sheet/group/group/field[@name='client_id']" position="after">
+                        <field name="business_unit"/>
+                        <field name="magasin"/>
+                    </xpath>
+
+                    <xpath expr="/form/sheet/group/group/field[@name='is_enable']" position="attributes">
+                       <attribute name="invisible">0</attribute>
+                    </xpath>
+                    
+                </field>
+    </record>
+
+
     <record id="view_users_inherit" model="ir.ui.view">
                 <field name="name">user.form.inherit</field>
                 <field name="model">res.users</field>
@@ -44,6 +63,16 @@
 
     <record id="bi_crm_claim.menu_config_claim" model="ir.ui.menu">
                     <field name="groups_id" eval="[(4,ref('group_reclamation_admin'))]"/>
+    </record>
+    
+    <record id="wt_helpdesk.helpdesk_parameters_menu_root" model="ir.ui.menu">
+                    <field name="groups_id" eval="[(4,ref('group_sav_admin'))]"/>
+    </record>
+    <record id="wt_helpdesk.helpdesk_reference_menu_root" model="ir.ui.menu">
+                    <field name="groups_id" eval="[(4,ref('group_sav_admin'))]"/>
+    </record>
+    <record id="wt_helpdesk.helpdesk_configuration_menu_root" model="ir.ui.menu">
+                    <field name="groups_id" eval="[(4,ref('group_sav_admin'))]"/>
     </record>
 
     </data>

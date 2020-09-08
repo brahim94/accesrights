@@ -27,4 +27,10 @@ class aftersales(models.Model):
     def onchange_client_id(self):
         self.business_unit = self.client_id.business_unit_id
         self.magasin = self.client_id.magasin_id
- 
+
+
+class Factures(models.Model):
+    _inherit = "factures.factures"
+
+    magasin = fields.Many2one('crm.magasin', string='Magasin')
+    magasin_id = fields.Char(related='magasin.id_magasin', string='Magasin ID')

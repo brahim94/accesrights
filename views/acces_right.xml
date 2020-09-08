@@ -46,6 +46,21 @@
                 </field>
     </record>
 
+    <record id="view_facture_inherit" model="ir.ui.view">
+                <field name="name">facture.form.inherit</field>
+                <field name="model">factures.factures</field>
+                <field name="inherit_id" ref="wt_helpdesk.view_factures_form"/>
+                <field name="arch" type="xml">
+                    
+                    <xpath expr="/form/sheet/group/group/field[@name='date']" position="after">
+                         <field name="magasin"/>
+                        <field name="magasin_id"/>
+                       
+                    </xpath>
+                    
+                </field>
+    </record>
+
 
     <record id="view_users_inherit" model="ir.ui.view">
                 <field name="name">user.form.inherit</field>
